@@ -6,10 +6,15 @@ export const typeDefs = gql`
        id: String!
        name: String!
        handle: String!
-       avatarURL: String!
+       avatarURL: String
     }
 
     type Query{
        contacts: [Contact]
+    }
+
+    type Mutation{
+       removeContact(id: String!): [Contact]
+       addContact(id: String!, name: String!, handle: String, avatarURL: String): [Contact]
     }
 `
