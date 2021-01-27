@@ -6,6 +6,9 @@ import { resolvers } from './resolver'
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
+
+app.use(express.static('public'))
+
 server.applyMiddleware({ app });
 
 app.listen({ port: 4000 }, () =>
